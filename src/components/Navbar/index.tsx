@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import "./style.css"
 import { FaCartShopping, } from "react-icons/fa6";
 import { IoSearchSharp } from "react-icons/io5";
+
+import logo2 from "../../assets/logo2.png" 
 function Navbar(){
 return(
     <header>
-        <Link to="/"><h2>Ecomhall</h2></Link>
+        <Link to="/"><img src={logo2} alt="logomarca"/></Link>
         
         <div className="menu">
             <nav>

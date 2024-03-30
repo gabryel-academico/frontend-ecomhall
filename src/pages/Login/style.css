@@ -1,0 +1,45 @@
+*{
+    font-family: sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+
+
+.loginFormulario{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 420px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: center;
+    
+    
+}
+.loginFormulario img {
+    
+    width: 250px;
+    height: 45px;
+}
+#botao{
+    margin-top: 2rem;
+}
+.loginFormulario > * {
+    width: 100%;
+    margin-bottom: 1rem;
+    
+    
+    
+}

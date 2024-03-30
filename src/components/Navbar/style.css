@@ -20,6 +20,11 @@ header nav{
 
    
 }
+
+img{
+    width: 125px;
+    height: 35px;
+}
 ul{
     display: flex;
     flex-direction: row;
@@ -82,7 +87,10 @@ input:focus{
     width: 150px;
     margin-left: 0.5rem;
    }
-
+   img{
+    width: 110px;
+    height: 27.5px;
+}
    p{
     margin-left: 0.5rem;
     font-size: 13px;
@@ -111,9 +119,10 @@ input:focus{
     input{
         width: 95px;
     }
-    h2{
+    img{
         display: none;
     }
+   
     button{
         margin-left: 0rem;
     }
