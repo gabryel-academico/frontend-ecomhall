@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 420px;
+    height: 450px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -28,18 +28,26 @@
     
     
 }
+
+.registro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+
 .loginFormulario img {
     
     width: 250px;
     height: 45px;
 }
-#botao{
-    margin-top: 2rem;
-}
+
+
+
 .loginFormulario > * {
     width: 100%;
     margin-bottom: 1rem;
-    
-    
-    
+
 }

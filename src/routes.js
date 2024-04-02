@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Carrinho from "./pages/Carrinho";
 import Login from "./pages/Login";
-
+import Registro from "./pages/Registro";
 //Importando Navbar
 import Navbar from "./components/Navbar";
 //Configuração das rotas
@@ -25,6 +25,7 @@ function RoutesApp(){
             <Route path="/" element={ <Home/> }/>
             <Route path="/carrinho" element={ <Carrinho/> }/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/registro" element={<Registro/>}/>
             <Route/>
         </Routes>
         </BrowserRouter>
