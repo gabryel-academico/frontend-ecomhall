@@ -19,5 +19,43 @@
     margin: 0;
 }
 
+.card{
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
+.product-img {
+    
+    width: 100%;
+    height: 50%;
+    
+    
+    
+}
 
+.product-img button{
+    border: none;
+}
+.cards{
+    display: flex;
+}
+.product-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50%;
+}
+
+.product-btn {
+   width: 100%;
+}

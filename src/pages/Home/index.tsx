@@ -1,15 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+
 
 import banner from "../../assets/banner.jpg"
 import bg from "../../assets/bg.jpg"
 import "./style.css"
+import { Button } from '@mui/material';
 
 
 
@@ -24,31 +21,70 @@ function Home() {
     return(
         <>
         <div className='area'>
-        
         <div className='banner'><img src={banner} alt="banner" /></div>
-        <div className='card'>
-        <Card sx={{ maxWidth: 250 }}>
-      <CardActionArea onClick={handleCardClick}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={bg}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+        <article className='cards'>
+          <section className='card'>
+          <img src={bg} alt="Product" className='product-img' />
+                  <div className='product-info'>
+                      <h3>Product Name</h3>
+          
+                      <div className='product-btn'>
+                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
+                          margin: "auto",
+                        }}>
+                        Ver categoria
+                        </Button>
+                        </div>
+                  </div>
+          </section>
+
+          <section className='card'>
+          <img src={bg} alt="Product" className='product-img' />
+                  <div className='product-info'>
+                      <h3>Product Name</h3>
+          
+                      <div className='product-btn'>
+                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
+                          margin: "auto",
+                        }}>
+                        Ver categoria
+                        </Button>
+                        </div>
+                  </div>
+          </section>
+          <section className='card'>
+          <img src={bg} alt="Product" className='product-img' />
+                  <div className='product-info'>
+                      <h3>Product Name</h3>
+          
+                      <div className='product-btn'>
+                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
+                          margin: "auto",
+                        }}>
+                        Ver categoria
+                        </Button>
+                        </div>
+                  </div>
+          </section>
+
+          <section className='card'>
+          <img src={bg} alt="Product" className='product-img' />
+                  <div className='product-info'>
+                      <h3>Product Name</h3>
+          
+                      <div className='product-btn'>
+                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
+                          margin: "auto",
+                        }}>
+                        Ver categoria
+                        </Button>
+                        </div>
+                  </div>
+          </section>
+
+          
+        </article>
         </div>
-        </div>
-        
         </>
         
     )
