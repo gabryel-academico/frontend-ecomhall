@@ -7,7 +7,7 @@ function Footer(){
         <div className="container-footer">
             <div className="conteudo-container">
                 <Link to="/"><span>Home</span></Link>
-                <Link to="/conta"><span>Minha Conta</span></Link>
+                <Link to="/login"><span>Minha Conta</span></Link>
 
                 <span>Contato: suporte.ecomhall@exemplo.com</span>
             </div>

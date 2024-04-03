@@ -1,7 +1,7 @@
 
 import { TextField, Input, Button } from "@mui/material";
 
-import "./style.css"
+import "../style.css"
 import logo2 from "../../../assets/logo2.png"
 
 function handleClick(){
@@ -42,8 +42,7 @@ function RegCliente(){
            </Button>
             
                 
-                
-               
+                  
             </div>
 
         </div>

@@ -21,34 +21,34 @@ header nav{
    
 }
 
-img{
+header img{
     width: 125px;
     height: 35px;
 }
-ul{
+header ul{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-ul li{
+header ul li{
  margin-left: 1rem;
  list-style: none;
 
 }
-a{
+header a{
     color: white;
     text-decoration: none;
   
 }
-a:hover {
+header a:hover {
     color: #D9D9D9;
 }
-p{
+header p{
     margin-left: 3rem;
 }
 
-button{
+header button{
     background: transparent;
     border: 0;
     color: white;
@@ -66,7 +66,7 @@ button{
 }
 
 
-input{
+header input{
     margin-left: 1rem;
     border: 0;
     border-radius: 5px;
@@ -75,7 +75,7 @@ input{
     padding: 10px;
     
 }
-input:focus{
+header input:focus{
     outline: none;
 }
 
@@ -83,7 +83,7 @@ input:focus{
 @media (max-width: 800px){
    
     
-   input{
+   header input{
     width: 150px;
     margin-left: 0.5rem;
    }
