@@ -24,8 +24,8 @@ function Login() {
                 
                     <h4>Ainda não possui uma conta?</h4>
                     <div className="registro">
-                    <Button variant="contained" color='inherit'>Cliente</Button>
-                    <Button variant="contained" color='inherit' href='/registro'>Varejista</Button>
+                    <Button variant="contained" color='inherit' href='/registro/cliente'>Cliente</Button>
+                    <Button variant="contained" color='inherit' href='/registro/varejista'>Varejista</Button>
                     </div>
                 </div>
                 

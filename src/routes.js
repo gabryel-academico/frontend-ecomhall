@@ -8,9 +8,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Carrinho from "./pages/Carrinho";
 import Login from "./pages/Login";
-import Registro from "./pages/Registro";
+import RegCliente from "./pages/Registro/Cliente";
+import RegVarejista from "./pages/Registro/Varejista";
 //Importando Navbar
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 //Configuração das rotas
 function RoutesApp(){
     //Essa função retorna o componente das rotas
@@ -25,9 +27,10 @@ function RoutesApp(){
             <Route path="/" element={ <Home/> }/>
             <Route path="/carrinho" element={ <Carrinho/> }/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/registro" element={<Registro/>}/>
-            <Route/>
+            <Route path="/registro/cliente" element={<RegCliente/>}/>
+            <Route path="/registro/varejista" element={<RegVarejista/>}/>
         </Routes>
+        <Footer/>
         </BrowserRouter>
         
         

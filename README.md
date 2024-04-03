@@ -14,6 +14,13 @@ npm install react-router-dom
 npm install react-icons
 npm install @mui/material @emotion/react @emotion/styled
 ```
-
-
+## Comandos
+## inicializar o projeto
+```
+npm start
+```
+## Parar projeto
+``` 
+Ctrl + c
+```
 
