@@ -54,6 +54,8 @@ export default function CartProvider({children}: CartProviderProps){
         const produto = produtos.find((p) => p.id === id);
 
         const item = copiaCarrinho.find((product) => product.produto.id === id)
+        
+        // subistituir por post no bd
         if (produto){
             if(!item){
                 copiaCarrinho.push({produto, quantidade:1})

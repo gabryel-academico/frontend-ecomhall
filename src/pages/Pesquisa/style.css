@@ -1,0 +1,20 @@
+body{
+    background-color: #f0f0f0;
+}
+
+.containerSearch{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.headerSearch{
+    font-size: 19px;
+    margin: 0.5rem;
+}
+
+.productsSearch{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}

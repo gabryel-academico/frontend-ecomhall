@@ -9,11 +9,21 @@ import CardProduct from '../../components/Produtos';
 import { produtoItem } from "../../context/carrinhoContext";
 
 
-
+// substituir por requisição do banco de dados
 export const produtosData : produtoItem[] = [
   {id: 1, titulo: "Bola de basquete" , valor: 70.99, link:"/carrinho", capa:bg},
   {id: 2, titulo: "Smartphone genZ", valor: 980.00, link:"/carrinho", capa:bg},
-  {id: 3 , titulo: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, link:"/carrinho", capa:bg},
+  {id: 3, titulo: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, link:"/carrinho", capa:bg},
+  {id: 4, titulo: "Bola de basquete" , valor: 70.99, link:"/carrinho", capa:bg},
+  {id: 5, titulo: "Smartphone genZ", valor: 980.00, link:"/carrinho", capa:bg},
+  {id: 6, titulo: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, link:"/carrinho", capa:bg},
+  {id: 7, titulo: "Bola de basquete" , valor: 70.99, link:"/carrinho", capa:bg},
+  {id: 8, titulo: "Smartphone genZ", valor: 980.00, link:"/carrinho", capa:bg},
+  {id: 9, titulo: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, link:"/carrinho", capa:bg},
+  {id: 10, titulo: "Bola de basquete" , valor: 70.99, link:"/carrinho", capa:bg},
+  {id: 11, titulo: "Smartphone genZ", valor: 980.00, link:"/carrinho", capa:bg},
+  {id: 12, titulo: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, link:"/carrinho", capa:bg},
+  {id: 10, titulo: "Bola de basquete" , valor: 70.99, link:"/carrinho", capa:bg},
 ]
 
 
