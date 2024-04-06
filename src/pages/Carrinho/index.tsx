@@ -17,7 +17,7 @@ function Carrinho(){
           {carrinho.map(item => (
             
             <ul key={item.produto.id}>
-                <li>{item.produto.titulo}</li>
+                <li>{item.produto.nome}</li>
                 <li>{item.produto.valor}</li>
                 <li>{item.quantidade}</li>
             </ul>

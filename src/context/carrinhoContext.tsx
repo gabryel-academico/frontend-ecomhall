@@ -9,7 +9,7 @@ import React from "react";
  
 export interface produtoItem {
     id: number;
-    titulo: string;
+    nome: string;
     valor: number;
     link: string;
     capa: string;
