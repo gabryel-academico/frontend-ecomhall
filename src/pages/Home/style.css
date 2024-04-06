@@ -1,6 +1,6 @@
 .area{
     background-color: #f0f0f0;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,43 +19,22 @@
     margin: 0;
 }
 
-.card{
-    width: 250px;
-    height: 250px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.product-img {
-    
-    width: 100%;
-    height: 50%;
-    
-    
-    
-}
-
-.product-img button{
-    border: none;
-}
 .cards{
     display: flex;
-}
-.product-info {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
-    height: 50%;
+}
+.cards > section {
+    flex: 0 0 calc(25% - 20px); /* 33.33% para 3 itens por linha, 20px para a margem */
+    margin: 10px; /* metade do espaço entre os itens */
 }
 
-.product-btn {
-   width: 100%;
+@media(max-width: 499px){
+    .cards{
+        justify-content: center;
+        
+    }
 }
+

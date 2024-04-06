@@ -1,89 +1,45 @@
+import bg from "../../assets/bg.jpg"
 import { useNavigate } from 'react-router-dom';
 
-
-
-
 import banner from "../../assets/banner.jpg"
-import bg from "../../assets/bg.jpg"
+
 import "./style.css"
-import { Button } from '@mui/material';
+import CardProduct from '../../components/Produtos';
+
+import { produtoItem } from "../../context/carrinhoContext";
 
 
 
-
+export const produtosData : produtoItem[] = [
+  {id: 1, titulo: "Bola de basquete" , valor: 70.99, link:"/carrinho", capa:bg},
+  {id: 2, titulo: "Smartphone genZ", valor: 980.00, link:"/carrinho", capa:bg},
+  {id: 3 , titulo: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, link:"/carrinho", capa:bg},
+]
 
 
 function Home() {
     const navigate = useNavigate()
-    function handleCardClick(){
+    function handleCardLinkClick(){
         navigate('/login')
+    }
+
+    function handleClick(){
+      
     }
     return(
         <>
         <div className='area'>
         <div className='banner'><img src={banner} alt="banner" /></div>
+        <h1>Recomendações</h1>
         <article className='cards'>
-          <section className='card'>
-          <img src={bg} alt="Product" className='product-img' />
-                  <div className='product-info'>
-                      <h3>Product Name</h3>
           
-                      <div className='product-btn'>
-                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
-                          margin: "auto",
-                        }}>
-                        Ver categoria
-                        </Button>
-                        </div>
-                  </div>
-          </section>
-
-          <section className='card'>
-          <img src={bg} alt="Product" className='product-img' />
-                  <div className='product-info'>
-                      <h3>Product Name</h3>
+            {produtosData.map(item =>(
+              <section key={item.id}><CardProduct imgSrc={item.capa} productName={item.titulo} productLink={item.link} price={item.valor} id={item.id}/></section>
+            ))}
           
-                      <div className='product-btn'>
-                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
-                          margin: "auto",
-                        }}>
-                        Ver categoria
-                        </Button>
-                        </div>
-                  </div>
-          </section>
-          <section className='card'>
-          <img src={bg} alt="Product" className='product-img' />
-                  <div className='product-info'>
-                      <h3>Product Name</h3>
-          
-                      <div className='product-btn'>
-                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
-                          margin: "auto",
-                        }}>
-                        Ver categoria
-                        </Button>
-                        </div>
-                  </div>
-          </section>
-
-          <section className='card'>
-          <img src={bg} alt="Product" className='product-img' />
-                  <div className='product-info'>
-                      <h3>Product Name</h3>
-          
-                      <div className='product-btn'>
-                        <Button variant="contained" color='inherit' href="#contained-buttons" onClick={handleCardClick}sx={{
-                          margin: "auto",
-                        }}>
-                        Ver categoria
-                        </Button>
-                        </div>
-                  </div>
-          </section>
-
           
         </article>
+        
         </div>
         </>
         
