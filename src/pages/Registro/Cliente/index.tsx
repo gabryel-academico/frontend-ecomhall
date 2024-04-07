@@ -21,7 +21,7 @@ function RegCliente(){
     {
         event.preventDefault();
 
-        if(cpf.length !== 13)
+        if(cpf.length !== 11)
         {
             console.log("Digite um CPF válido!");
             return;
@@ -85,16 +85,16 @@ function RegCliente(){
            <div id="form-reg">
             
                <form onSubmit={(event: React.ChangeEvent<HTMLFormElement>) => onSubimit(event)}>
-                   <TextField id="outlined-basic" label="Nome" onChange={(e) => setNome(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="Nome" value={nome ?? ""} onChange={(e) => setNome(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="CPF" onChange={(e) => setCpf(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="CPF" value={cpf ?? ""} onChange={(e) => setCpf(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="Email" onChange={(e) => setEmail(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="Email" value={email ?? ""} onChange={(e) => setEmail(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="Senha" onChange={(e) => setSenha(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="Senha" value={senha ?? ""} onChange={(e) => setSenha(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
                    
