@@ -14,22 +14,40 @@ import React from "react";
 
 
 
+
+
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import TextField from '@mui/material/TextField';
+
+
+
 function Carrinho(){
   
   //dropdown
   const [age, setAge] = React.useState('');
   const handleChange = (event: SelectChangeEvent) => {
-      setAge(event.target.value as string);
-    };
+    setAge(event.target.value as string);
+  };
+  //pop-up
+  const [open, setOpen] = React.useState(false);
+  
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
   
 
 
-
+    //contexxto
     const { carrinho, adicionarProduto, removerProduto } = useContext(CartContext);
     
-    function handleCardCspanck() {
-        
-    }
+    
     return(
         <div className="containerCart">
          <h1>Seu carrinho</h1>
@@ -68,16 +86,17 @@ function Carrinho(){
             <h4>FORMA DE PAGAMENTO</h4>
             <hr />  
             <div id="pedidosbotoes1">
-                <div>
-                  <Box sx={{ minWidth: 120 }}>
+                
+                  <Box sx={{ width: "40%", margin: "1rem" }}>
                     <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                    <InputLabel id="demo-simple-select-label" size="small" >Pagamento</InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={age}
-                      label="Age"
+                      label="Pagamento"
                       onChange={handleChange}
+                      size="small"
                     >
                       <MenuItem value={10}>Pix</MenuItem>
                       <MenuItem value={20}>Débito</MenuItem>
@@ -85,13 +104,86 @@ function Carrinho(){
                     </Select>
                   </FormControl>
                   </Box>
-                </div>
+                
+                <Button variant="contained" color="inherit" size="small" sx={{
+                  margin: "1rem"
+                }}
+                onClick={handleClickOpen}
+                >Adicionar Endereço</Button>
+
+              {/*POP-UP */}
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Endereço</DialogTitle>
+                <DialogContent>
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="rua"
+                    label="Rua"
+                    type="text"
+                    size="small"
+                    fullWidth
+                  />
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="numero"
+                    label="Número"
+                    type="text"
+                    size="small"
+                    fullWidth
+                  />
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="cep"
+                    label="CEP"
+                    type="text"
+                    size="small"
+                    fullWidth
+                  />
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="cidade"
+                    label="Cidade"
+                    type="text"
+                    size="small"
+                    fullWidth
+                  />
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="estado"
+                    label="Estado"
+                    type="text"
+                    size="small"
+                    fullWidth
+                  />
+                </DialogContent>
+                <DialogActions>
+                  <Button color="inherit" onClick={handleClose}>Cancelar</Button>
+                  <Button  onClick={handleClose}>Salvar</Button>
+                </DialogActions>
+              </Dialog>
+
+
             </div>
-            
+            <Button
+            variant="contained" 
+            color="inherit" 
+            size="small"
+            sx={{
+              width: "45%",
+              margin: "auto",
+              marginBottom: "1rem",
+            }}
+            >Finalizar Pedido</Button>
 
           </div>
+          
          </article>
-               
+        
              
         </div>
         
