@@ -29,6 +29,7 @@ return(
            <ul>
             <li><Link to="#end">Contato</Link></li>
             <li><Link to="/login">Conta</Link></li>
+            <li><Link to="/pedidos/cliente">Pedidos</Link></li>
            </ul>
             
             

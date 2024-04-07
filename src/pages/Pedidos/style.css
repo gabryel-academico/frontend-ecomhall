@@ -1,0 +1,84 @@
+body{
+    background-color: #f0f0f0;
+}
+
+.containerPedidos{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        margin: 0.5rem;
+    }
+    hr{
+        width: 100%;
+    }
+}
+
+.areaPedidos{
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.2rem;
+
+}
+.pedido{
+    
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.areaPedidos hr{
+    margin-bottom: 0.5rem;
+}
+
+
+#numPedido{
+    span{
+    margin-left: 0.5rem;
+    }
+    margin-bottom: 0.5rem;
+}
+.infoPedido{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgb(255, 238, 238);
+    margin-bottom: 0.5rem;
+}
+
+
+#itemPedido{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span{
+        font-size: 15px;
+    }
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+
+
+
+#finalPedido{
+    display: flex;
+    flex-direction: column;
+    hr{
+        width: 100%;
+    }
+    
+        margin-top: 0.5rem;
+}

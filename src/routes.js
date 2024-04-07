@@ -12,6 +12,7 @@ import RegCliente from "./pages/Registro/Cliente";
 import RegVarejista from "./pages/Registro/Varejista";
 import Pesquisa from "./pages/Pesquisa";
 import Produto from "./pages/Produto";
+import PedidosC from "./pages/Pedidos/Clientes";
 //Importando Navbar
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -31,6 +32,7 @@ function RoutesApp(){
             <Route path="/produto/:id" element={ <Produto/> }/>
             <Route path="/carrinho" element={ <Carrinho/> }/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/pedidos/cliente" element={<PedidosC/>}/>
             <Route path="/registro/cliente" element={<RegCliente/>}/>
             <Route path="/registro/varejista" element={<RegVarejista/>}/>
         </Routes>
