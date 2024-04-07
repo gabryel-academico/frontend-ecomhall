@@ -1,10 +1,15 @@
 import "../style.css";
+import { useNavigate } from "react-router-dom";
 
 function PedidosC() {
+  const navigate = useNavigate();
   return (
     <div className="containerPedidos">
+     
       <h1>Meus Pedidos</h1>
       <hr />
+
+
       <article className="areaPedidos">
           {/**Adicionar um map aqui para todos os pedidos do cliente */}
           <section className="pedido">
@@ -30,25 +35,22 @@ function PedidosC() {
             
             
             </section>
-            
-            
-                    
-                    <section id="finalPedido">
-                      <div id="itemPedido">
-                        <span>Status:</span>
-                        <span>Enviado</span>
-                      </div>
-                      <hr />
-                      <div id="itemPedido">
-                        <span >Endereço: </span>
-                        <span>Rua x, casa Y</span>
-                      </div>
-                      <hr />
-                      <div id="itemPedido">
-                        <span>Valor total:</span>
-                        <span>R$4,50</span>
-                      </div>
-                    </section>
+              <section id="finalPedido">
+                <div id="itemPedido">
+                  <span>Status:</span>
+                      <span>Enviado</span>
+                    </div>
+                    <hr />
+                    <div id="itemPedido">
+                      <span >Endereço: </span>
+                      <span>Rua x, casa Y</span>
+                    </div>
+                    <hr />
+                    <div id="itemPedido">
+                      <span>Valor total:</span>
+                      <span>R$4,50</span>
+                    </div>
+              </section>
           </section>
           <hr />
           <hr />
@@ -113,9 +115,7 @@ function PedidosC() {
             
             
             </section>
-            
-            
-                    
+        
                     <section id="finalPedido">
                       <div id="itemPedido">
                         <span>Status:</span>
@@ -136,6 +136,7 @@ function PedidosC() {
           <hr />
           <hr />
       </article>
+      <button onClick={() => navigate(-1)}>Voltar</button>
     </div>
     
   );

@@ -27,7 +27,7 @@ return(
         <div className="menu">
             <nav>
            <ul>
-            <li><Link to="#end">Contato</Link></li>
+            
             <li><Link to="/login">Conta</Link></li>
             <li><Link to="/pedidos/cliente">Pedidos</Link></li>
            </ul>
@@ -35,7 +35,7 @@ return(
             
             <input type="text"/>
             <button onClick={()=>{handleclicksearch()}}>{<IoSearchSharp size={24}/>}</button>
-            <p>R$0,00</p>
+           
             <Link to="/carrinho"><button id="shop">{<FaCartShopping size={24}/>}</button></Link>
             
            

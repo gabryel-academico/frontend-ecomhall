@@ -31,6 +31,23 @@ body{
     padding: 0.2rem;
 
 }
+.areaPedidos hr{
+    margin-bottom: 0.5rem;
+}
+
+.containerPedidos button{
+    margin-bottom: 0.5rem;
+    border: solid 0.2px #000000;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    width: 15%;
+    cursor: pointer;
+}
+.containerPedidos button:hover {
+    background-color: #000000; /* Cor de fundo quando o mouse passa sobre o botão */
+    color: white; /* Cor do texto quando o mouse passa sobre o botão */
+}
 .pedido{
     
     border-radius: 10px;
@@ -38,9 +55,7 @@ body{
     margin-bottom: 1rem;
 }
 
-.areaPedidos hr{
-    margin-bottom: 0.5rem;
-}
+
 
 
 #numPedido{

@@ -94,7 +94,7 @@ function RegCliente(){
                    <TextField id="outlined-basic" label="Email" value={email ?? ""} onChange={(e) => setEmail(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="Senha" value={senha ?? ""} onChange={(e) => setSenha(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="Senha" value={senha ?? ""} onChange={(e) => setSenha(e.target.value)} variant="outlined" margin="dense" size="small" type="password" sx={{
                     width: "100%",
                    }}/>
                    

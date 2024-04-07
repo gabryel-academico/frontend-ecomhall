@@ -14,11 +14,11 @@ function Login() {
                 
                 
                     <div>
-                        <form action="">
+                        <form>
                             <TextField id="outlined-basic" label="Email" variant="outlined" size='small' margin='dense' sx={{
                                 width: "100%",
                             }}/>
-                            <TextField  id="outlined-basic" label="Senha" variant="outlined" size='small' margin='dense' sx={{
+                            <TextField  id="outlined-basic" label="Senha" variant="outlined" size='small' margin='dense' type="password" sx={{
                                 width: "100%",
                             }}/>
                         </form>
