@@ -11,7 +11,7 @@ export interface produtoItem {
     id: number;
     nome: string;
     valor: number;
-    link: string;
+    // link: string;
     capa: string;
   }
 

@@ -20,7 +20,7 @@ function Pesquisa() {
         
         <article className="productsSearch">
           {produtosdata.map(item => (
-            <section key={item.id}><CardProduct imgSrc={item.imagem} productName={item.nome} productLink={item.id.toString()} price={item.preco} id={item.id} /></section>
+            <section key={item.id}><CardProduct imgSrc={item.capa} productName={item.nome} productLink={item.id.toString()} price={item.valor} id={item.id} /></section>
           ))}
         </article>
       

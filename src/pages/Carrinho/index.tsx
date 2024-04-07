@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/carrinhoContext";
-import { produtosData } from "../Home";
 
 import { FaTrash } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
