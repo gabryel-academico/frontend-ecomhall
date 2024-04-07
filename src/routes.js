@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import RegCliente from "./pages/Registro/Cliente";
 import RegVarejista from "./pages/Registro/Varejista";
 import Pesquisa from "./pages/Pesquisa";
+import Produto from "./pages/Produto";
 //Importando Navbar
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -27,6 +28,7 @@ function RoutesApp(){
         <Routes>
             <Route path="/" element={ <Home/> }/>
             <Route path="/pesquisa" element={ <Pesquisa/> }/>
+            <Route path="/produto/:id" element={ <Produto/> }/>
             <Route path="/carrinho" element={ <Carrinho/> }/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/registro/cliente" element={<RegCliente/>}/>

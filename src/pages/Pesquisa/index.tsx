@@ -1,5 +1,5 @@
 import "./style.css"
-import CardProduct from "../../components/Produtos";
+import CardProduct from "../../components/CardProduct";
 
 
 
