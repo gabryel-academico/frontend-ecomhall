@@ -1,14 +1,80 @@
-
 import { TextField,Button } from "@mui/material";
 
 import "../style.css"
 import logo2 from "../../../assets/logo2.png"
+import React, { useState } from "react";
+import { CredenciaisService } from "../../../shared/Services/api/Registro/CredenciaisService";
+import { ICredenciais } from "../../../shared/Services/api/Registro/CredenciaisService";
+import { ClienteService, ICliente } from "../../../shared/Services/api/Registro/Cliente/ClienteService";
 
-function handleClick(){
-    alert("TESTE")
-}
+
 
 function RegCliente(){
+
+    const [nome, setNome] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+
+    const onSubimit = (event : React.FormEvent<HTMLFormElement>) =>
+    {
+        event.preventDefault();
+
+        if(cpf.length !== 13)
+        {
+            console.log("Digite um CPF válido!");
+            return;
+        }
+        if(nome === "" || email === "" || senha === "")
+        {
+            console.log("Preencha todos os campos!");
+            return;
+        }
+
+        const credenciais : ICredenciais = 
+        {
+            email,
+            senha,
+            nome
+        }
+
+        CredenciaisService.create(credenciais).then((result) => 
+        {
+            if(result instanceof Error)
+            {
+                console.error(result.message);
+                return;
+            }
+
+            const cliente : ICliente = 
+            {
+                CPF: cpf,
+                idCredenciais: result
+            }
+
+            ClienteService.create(cliente).then((result) => 
+            {
+                if(result instanceof Error)
+                {
+                    console.error(result.message);
+                    return;
+                }
+                
+                limparCampos();
+                console.log(result);
+            });
+        });
+    }
+
+    const limparCampos = () =>
+    {
+        setNome("");
+        setCpf("");
+        setEmail("");
+        setSenha("");
+    }
+
     return(
         <div className="container-reg">
            <div className="card-reg">
@@ -18,31 +84,33 @@ function RegCliente(){
            </div>
            <div id="form-reg">
             
-               <form action="">
-                   <TextField id="outlined-basic" label="Nome" variant="outlined" margin="dense" size="small" sx={{
+               <form onSubmit={(event: React.ChangeEvent<HTMLFormElement>) => onSubimit(event)}>
+                   <TextField id="outlined-basic" label="Nome" onChange={(e) => setNome(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="CPF" variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="CPF" onChange={(e) => setCpf(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="Email" variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="Email" onChange={(e) => setEmail(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
-                   <TextField id="outlined-basic" label="Senha" variant="outlined" margin="dense" size="small" sx={{
+                   <TextField id="outlined-basic" label="Senha" onChange={(e) => setSenha(e.target.value)} variant="outlined" margin="dense" size="small" sx={{
                     width: "100%",
                    }}/>
                    
+                    <Button 
+                        type="submit" 
+                        variant="contained"  
+                        color='inherit'  
+                        sx={{ width: "100%", }}
+                        >
+                        Realizar Cadastro
+                    </Button>
                </form>
                
            </div>
-           <Button variant="contained" color='inherit' href="#contained-buttons" sx={{
-            width: "100%",
-           }} onClick={handleClick}>
-           Realizar Cadastro
-           </Button>
             
                 
-                  
             </div>
 
         </div>
