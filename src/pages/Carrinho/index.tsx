@@ -45,7 +45,7 @@ function Carrinho(){
 
 
     //contexxto
-    const { carrinho, adicionarProduto, removerProduto } = useContext(CartContext);
+    const { adicionarQuantidade,carrinho,removerProduto } = useContext(CartContext);
     
     
     return(
@@ -66,8 +66,8 @@ function Carrinho(){
                 </div>
                 
                 <div id="itemButtons">
-                  <button><IoMdAddCircle size={20}/></button>
-                  <button><FaTrash size={20}/></button>
+                  <button onClick={()=>{adicionarQuantidade(item.produto.id)}}><IoMdAddCircle size={20}/></button>
+                  <button onClick={()=>{removerProduto(item.produto.id)}}><FaTrash size={20}/></button>
                 </div>
                 
             </section>

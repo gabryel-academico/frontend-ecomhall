@@ -28,6 +28,7 @@ interface CartContextType {
     carrinho: itemCarrinho[];
     adicionarProduto: (id: number) => void;
     removerProduto: (id: number) => void;
+    adicionarQuantidade: (id: number) => void;
   }
 
 
@@ -38,6 +39,7 @@ export const CartContext = React.createContext<CartContextType>({
     carrinho: [],
   adicionarProduto: () => {},
   removerProduto: () => {},
+  adicionarQuantidade: () => {},
 });
 
 
@@ -73,13 +75,32 @@ export default function CartProvider({children}: CartProviderProps){
 
     // remover item no carrinho
     function removerProduto(id: number) {
-
+        const copiaCarrinho = [...carrinho]
+        const item = copiaCarrinho.find((product) => product.produto.id === id)
+        
+        if(item){
+            item.quantidade = item.quantidade - 1
+            if(item.quantidade <= 0){
+                copiaCarrinho.splice(copiaCarrinho.indexOf(item), 1)
+            }
+        }
+        setCarrinho(copiaCarrinho)
     }
+    // adicionar quantidade
+    function adicionarQuantidade(id: number){
+        const copiaCarrinho = [...carrinho]
+        const item = copiaCarrinho.find((product) => product.produto.id === id)
+        if(item){
+            item.quantidade = item.quantidade + 1
+        }
+        setCarrinho(copiaCarrinho)
+    }
+
 
     
     
     return(
-        <CartContext.Provider value={{carrinho, adicionarProduto, removerProduto}}>
+        <CartContext.Provider value={{carrinho, adicionarProduto, removerProduto, adicionarQuantidade}}>
             {children}
         </CartContext.Provider>
     );
