@@ -11,7 +11,7 @@ import React from "react";
 export interface produtoItem {
     id: number;
     nome: string;
-    valor: number;
+    preco: number;
     // link: string;
     capa: string;
   }
@@ -58,6 +58,7 @@ export default function CartProvider({children}: CartProviderProps){
             else
             {
                 setProdutosData(result);
+                console.log(result)
             }
         });
     }, [])

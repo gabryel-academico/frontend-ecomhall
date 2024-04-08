@@ -14,24 +14,11 @@ import { Environment } from "../../shared/environment";
 
 // substituir por requisição do banco de dados
 export const produtosData : produtoItem[] = [
-  {id: 1, nome: "Bola de basquete" , valor: 70.99, capa:bg},
-  {id: 2, nome: "Smartphone genZ", valor: 980.00, capa:bg},
-  {id: 3, nome: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, capa:bg},
-  {id: 4, nome: "Bola de basquete" , valor: 70.99, capa:bg},
-  {id: 5, nome: "Smartphone genZ", valor: 980.00, capa:bg},
-  {id: 6, nome: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, capa:bg},
-  {id: 7, nome: "Bola de basquete" , valor: 70.99, capa:bg},
-  {id: 8, nome: "Smartphone genZ", valor: 980.00, capa:bg},
-  {id: 9, nome: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, capa:bg},
-  {id: 10, nome: "Bola de basquete" , valor: 70.99, capa:bg},
-  {id: 11, nome: "Smartphone genZ", valor: 980.00, capa:bg},
-  {id: 12, nome: "The Witcher: O Último Desejo: A Saga do Bruxo Geralt de Rívia ", valor: 53.12, capa:bg},
-  {id: 10, nome: "Bola de basquete" , valor: 70.99, capa:bg},
 ]
 
 
 function Home() {
-    
+
     const navigate = useNavigate()
     function handleCardLinkClick(){
         navigate('/login')
@@ -64,7 +51,7 @@ function Home() {
         <article className='cards'>
           
             {produtosData.map(item =>(
-              <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={`produto/${item.id.toString()}`} price={item.valor} id={item.id}/></section>
+              <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={`produto/${item.id.toString()}`} price={item.preco} id={item.id}/></section>
             ))}
           
           

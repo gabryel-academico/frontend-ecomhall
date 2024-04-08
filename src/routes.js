@@ -28,7 +28,7 @@ function RoutesApp(){
         <Navbar/>
         <Routes>
             <Route path="/" element={ <Home/> }/>
-            <Route path="/pesquisa" element={ <Pesquisa/> }/>
+            <Route path="/pesquisa/:id" element={ <Pesquisa/> }/>
             <Route path="/produto/:id" element={ <Produto/> }/>
             <Route path="/carrinho" element={ <Carrinho/> }/>
             <Route path="/login" element={<Login/>}/>

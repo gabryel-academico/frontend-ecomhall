@@ -11,8 +11,9 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import "./style.css"
 import React from "react";
+import { useState } from "react";
 
-
+import { EnderecoService, IEndereco } from "../../shared/Services/api/Endereco/EnderecoService";
 
 
 
@@ -42,7 +43,45 @@ function Carrinho(){
     setOpen(false);
   };
   
+  //adicionar endereço
+  const [rua, setRua] = useState('')
+  const [numero, setNumero] = useState(0)
+  const [cep, setCep] = useState('')
+  const [complemento, setComplemento] = useState('')
+  const [cidade, setCidade] = useState('')
+  const [estado, setEstado] = useState('')
+  const [bairro, setBairro] = useState('')
 
+  const [idEndereco, setIdEndereco] = useState(0)
+  function  handleClickAdress(){
+    const endereco: IEndereco = {
+      rua,
+      numero,
+      complemento,
+      cep,
+      cidade,
+      estado,
+      bairro
+    }
+    console.log(endereco)
+    EnderecoService.Create(endereco).then((result) => {
+      
+      if(result instanceof Error)
+      {
+        alert(result.message)
+      }
+      else
+      {
+         setIdEndereco(result)
+         console.log(result)
+      }
+    })
+
+    
+    setOpen(false);
+  }
+
+  
 
     //contexxto
     const { adicionarQuantidade,carrinho,removerProduto } = useContext(CartContext);
@@ -61,7 +100,7 @@ function Carrinho(){
                 
                 <div id="itemInfo">
                 <span id="nomeP">Nome: {item.produto.nome}</span>
-                  <span>Valor: R$ {item.produto.valor}</span>
+                  <span>Valor: R$ {item.produto.preco}</span>
                   <span>Quantidade: {item.quantidade}</span>
                 </div>
                 
@@ -79,7 +118,7 @@ function Carrinho(){
           
             <div id="carTotalValor">
               <span>Valor total:</span>
-              <span>R$ {carrinho.reduce((acc, item) => acc + item.produto.valor * item.quantidade, 0)}</span>
+              <span>R$ {carrinho.reduce((acc, item) => acc + item.produto.preco * item.quantidade, 0)}</span>
             </div>
           </div>
           <div className="formaPagamento">
@@ -123,6 +162,7 @@ function Carrinho(){
                     type="text"
                     size="small"
                     fullWidth
+                    onChange={(e) => setRua(e.target.value)}
                   />
                   <TextField
                     autoFocus
@@ -132,6 +172,27 @@ function Carrinho(){
                     type="text"
                     size="small"
                     fullWidth
+                    onChange={(e) => setNumero(Number(e.target.value))}
+                  />
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="complemento"
+                    label="Complemento"
+                    type="text"
+                    size="small"
+                    fullWidth
+                    onChange={(e) => setComplemento(e.target.value)}
+                  />
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    id="bairro"
+                    label="Bairro"
+                    type="text"
+                    size="small"
+                    fullWidth
+                    onChange={(e) => setBairro(e.target.value)}
                   />
                   <TextField
                     autoFocus
@@ -141,6 +202,7 @@ function Carrinho(){
                     type="text"
                     size="small"
                     fullWidth
+                    onChange={(e) => setCep(e.target.value)}
                   />
                   <TextField
                     autoFocus
@@ -150,7 +212,9 @@ function Carrinho(){
                     type="text"
                     size="small"
                     fullWidth
+                    onChange={(e) => setCidade(e.target.value)}
                   />
+                  
                   <TextField
                     autoFocus
                     margin="dense"
@@ -159,11 +223,12 @@ function Carrinho(){
                     type="text"
                     size="small"
                     fullWidth
+                    onChange={(e) => setEstado(e.target.value)}
                   />
                 </DialogContent>
                 <DialogActions>
                   <Button color="inherit" onClick={handleClose}>Cancelar</Button>
-                  <Button  onClick={handleClose}>Salvar</Button>
+                  <Button  onClick={handleClickAdress}>Salvar</Button>
                 </DialogActions>
               </Dialog>
 

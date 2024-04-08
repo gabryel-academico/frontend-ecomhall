@@ -10,12 +10,19 @@ import { FaCartShopping, } from "react-icons/fa6";
 import { IoSearchSharp } from "react-icons/io5";
 
 import logo2 from "../../assets/logo2.png" 
+import { useState } from "react";
+
+
+
+
 function Navbar(){
 const navigate = useNavigate();
+const [search, setSearch] = useState("")
+
 
 //função para buscar produtos
 function handleclicksearch(){
-navigate("/pesquisa")
+navigate(`/pesquisa/${search}`)
 }
 
 
@@ -33,7 +40,7 @@ return(
            </ul>
             
             
-            <input type="text"/>
+            <input type="search" onChange={(e)=>setSearch(e.target.value)} />
             <button onClick={()=>{handleclicksearch()}}>{<IoSearchSharp size={24}/>}</button>
            
             <Link to="/carrinho"><button id="shop">{<FaCartShopping size={24}/>}</button></Link>

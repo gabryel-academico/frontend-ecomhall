@@ -3,14 +3,7 @@ import axios from 'axios';
 import { Environment } from '../../../environment';
 import { responseInterceptor, errorInteceptor } from './interceptors';
 
-// export interface IPaginacao {
-//     totalCount: number,
-//     pageSize: number,
-//     currentPage: number,
-//     totalPages: number,
-//     hasNext: boolean,
-//     hasPrevious: boolean
-// }
+
 
 const Api = axios.create({
     baseURL: Environment.URL_API,//URL base
