@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../style.css";
 import { useNavigate } from "react-router-dom";
 import { ProdutoService } from "../../../shared/Services/api/Produto/ProdutoService";
-
+import banner from "../../../assets/meuspedidos.jpg"
 function PedidosC() {
   const navigate = useNavigate();
 
@@ -10,7 +10,7 @@ function PedidosC() {
   return (
     <div className="containerPedidos">
      
-      <h1>Meus Pedidos</h1>
+      <div className='banner'><img src={banner} alt="banner" /></div>
       <hr />
 
 
