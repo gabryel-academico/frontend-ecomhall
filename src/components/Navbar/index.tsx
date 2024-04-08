@@ -25,6 +25,11 @@ function handleclicksearch(){
 navigate(`/pesquisa/${search}`)
 }
 
+function isLoggedIn(): boolean {
+    const accessToken = localStorage.getItem('ACESS_TOKEN'); 
+
+    return accessToken ? false : true;
+}
 
 
 return(
@@ -35,8 +40,11 @@ return(
             <nav>
            <ul>
             
-            <li><Link to="/login">Conta</Link></li>
-            <li><Link to="/pedidos/cliente">Pedidos</Link></li>
+            {isLoggedIn() ? (
+                                <li><Link to="/login">Conta</Link></li>
+                            ) : (
+                                <li><Link to="/pedidos/cliente">Conta</Link></li>
+                            )}
            </ul>
             
             
