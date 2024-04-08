@@ -3,8 +3,9 @@ import { Button } from "@mui/material";
 
 import { title } from "process";
 import { ReactNode, useEffect, useState } from "react";
-import { produtosData } from "../pages/Home";
-
+//import { produtosData } from "../pages/Home";
+import { ProdutoService } from "../shared/Services/api/Produto/ProdutoService";
+import { Environment } from "../shared/environment";
 import React from "react";
  
 export interface produtoItem {
@@ -46,6 +47,21 @@ export const CartContext = React.createContext<CartContextType>({
 
 export default function CartProvider({children}: CartProviderProps){
     const [carrinho, setCarrinho] = useState<itemCarrinho[]>([]);
+    const [produtosData, setProdutosData] = useState<produtoItem[]>([]);
+    
+    useEffect(() => {
+        ProdutoService.listagemProdutos().then((result) => {
+            if(result instanceof Error)
+            {
+                console.error(result);
+            }
+            else
+            {
+                setProdutosData(result);
+            }
+        });
+    }, [])
+
     const produtos = produtosData
     
     // adiciona item ao carrinho

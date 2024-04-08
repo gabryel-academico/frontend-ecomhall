@@ -31,7 +31,7 @@ export const produtosData : produtoItem[] = [
 
 
 function Home() {
-
+    
     const navigate = useNavigate()
     function handleCardLinkClick(){
         navigate('/login')
@@ -64,7 +64,7 @@ function Home() {
         <article className='cards'>
           
             {produtosData.map(item =>(
-              <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={item.id.toString()} price={item.valor} id={item.id}/></section>
+              <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={`produto/${item.id.toString()}`} price={item.valor} id={item.id}/></section>
             ))}
           
           
