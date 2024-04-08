@@ -13,9 +13,18 @@ function PedidosC() {
       <div className='banner'><img src={banner} alt="banner" /></div>
       <hr />
 
+      <article>
+        <section className= "conta">
+            <span>Nome:</span>
+            </section>
+
+      </article>
 
       <article className="areaPedidos">
           {/**Adicionar um map aqui para todos os pedidos do cliente */}
+
+          
+
           <section className="pedido">
           
             <section id="numPedido"><span>Número do pedido:</span></section>
