@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { CredenciaisService } from "../../../shared/Services/api/Registro/CredenciaisService";
 import { ICredenciais } from "../../../shared/Services/api/Registro/CredenciaisService";
 import { ClienteService, ICliente } from "../../../shared/Services/api/Registro/Cliente/ClienteService";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -17,6 +18,8 @@ function RegCliente(){
     const [senha, setSenha] = useState("");
 
 
+    const navigate = useNavigate();
+    
     const onSubimit = (event : React.FormEvent<HTMLFormElement>) =>
     {
         event.preventDefault();
@@ -65,6 +68,8 @@ function RegCliente(){
                 console.log(result);
             });
         });
+
+        navigate('/');
     }
 
     const limparCampos = () =>

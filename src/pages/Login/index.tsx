@@ -4,6 +4,7 @@ import logo2 from "../../assets/logo.svg"
 import "./style.css"
 import { useState } from 'react';
 import { ILogin, LoginService } from '../../shared/Services/api/Login/LoginService';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
@@ -11,6 +12,8 @@ function Login() {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
+    const navigate = useNavigate();
+    
     const onSubimit = (event : React.FormEvent<HTMLFormElement>) =>
         {
             event.preventDefault();
@@ -32,7 +35,7 @@ function Login() {
                 }
     
                 localStorage.setItem("ACESS_TOKEN", result );
-                console.log(result);
+                navigate('/');
 
             });
         }

@@ -5,6 +5,7 @@ import "../style.css"
 import { useState } from "react";
 import { CredenciaisService, ICredenciais } from "../../../shared/Services/api/Registro/CredenciaisService";
 import { IVarejista, VarejistaService } from "../../../shared/Services/api/Registro/Varejista/VarejistaService";
+import { useNavigate } from "react-router-dom";
 
 
 function RegVarejista()
@@ -13,6 +14,9 @@ function RegVarejista()
     const [cnpj, setCnpj] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+
+    const navigate = useNavigate();
+    
 
     const onSubimit = (event : React.FormEvent<HTMLFormElement>) =>
     {
@@ -64,6 +68,9 @@ function RegVarejista()
             })
             
         })
+
+        
+        navigate('/');
 
         
     }
