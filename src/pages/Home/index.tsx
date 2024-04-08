@@ -47,6 +47,7 @@ function Home() {
         <>
         <div className='area'>
         <div className='banner'><img src={banner} alt="banner" /></div>
+<<<<<<< HEAD
         <h1>Recomendações</h1>
         <article className='cards'>
           
@@ -56,7 +57,22 @@ function Home() {
           
           
         </article>
+=======
+>>>>>>> 4254b5a7ee958d8b53bc8e306d087289fb009eab
         
+        <h1>Recomendações</h1>
+
+          <div className="area">
+
+                <article className='cards'>
+                  
+                    {produtosData.map(item =>(
+                      <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={`produto/${item.id.toString()}`} price={item.valor} id={item.id}/></section>
+                    ))}
+                  
+                  
+                </article>
+          </div>
         </div>
         </>
         
