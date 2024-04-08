@@ -31,6 +31,7 @@ function Carrinho(){
   const [age, setAge] = React.useState('');
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
+
   };
   //pop-up
   const [open, setOpen] = React.useState(false);
@@ -51,6 +52,9 @@ function Carrinho(){
   const [cidade, setCidade] = useState('')
   const [estado, setEstado] = useState('')
   const [bairro, setBairro] = useState('')
+
+  //formas de pagamento
+  
 
   const [idEndereco, setIdEndereco] = useState(0)
   function  handleClickAdress(){
@@ -81,7 +85,9 @@ function Carrinho(){
     setOpen(false);
   }
 
-  
+  function handleClickFinal(){
+      
+  }
 
     //contexxto
     const { adicionarQuantidade,carrinho,removerProduto } = useContext(CartContext);
@@ -243,6 +249,7 @@ function Carrinho(){
               margin: "auto",
               marginBottom: "1rem",
             }}
+            onClick={handleClickFinal}
             >Finalizar Pedido</Button>
 
           </div>

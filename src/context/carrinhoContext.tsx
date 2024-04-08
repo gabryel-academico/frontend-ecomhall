@@ -9,6 +9,7 @@ import { Environment } from "../shared/environment";
 import React from "react";
  
 export interface produtoItem {
+    valor: number;
     id: number;
     nome: string;
     preco: number;
