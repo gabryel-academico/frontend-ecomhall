@@ -60,16 +60,20 @@ function Home() {
         <>
         <div className='area'>
         <div className='banner'><img src={banner} alt="banner" /></div>
-        <h1>Recomendações</h1>
-        <article className='cards'>
-          
-            {produtosData.map(item =>(
-              <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={`produto/${item.id.toString()}`} price={item.valor} id={item.id}/></section>
-            ))}
-          
-          
-        </article>
         
+        <h1>Recomendações</h1>
+
+          <div className="area">
+
+                <article className='cards'>
+                  
+                    {produtosData.map(item =>(
+                      <section key={item.id}><CardProduct imgSrc={Environment.URL_API+"images/"+item.id+".jpeg"} productName={item.nome} productLink={`produto/${item.id.toString()}`} price={item.valor} id={item.id}/></section>
+                    ))}
+                  
+                  
+                </article>
+          </div>
         </div>
         </>
         
