@@ -1,8 +1,12 @@
  import { Button } from "@mui/material";
 import "./style.css";
  import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/carrinhoContext";
+import { ProdutoService } from "../../shared/Services/api/Produto/ProdutoService";
+
+import { produtoItem } from "../../context/carrinhoContext";
+
  function Produto() {
 
 
@@ -13,15 +17,32 @@ import { CartContext } from "../../context/carrinhoContext";
     adicionarProduto(Number(id))
     
   }
+  const [produtosData, setProdutoData] = useState<produtoItem[]>([])
 
+  useEffect(() => {
+    ProdutoService.listagemProdutos().then((result) => {
+      if(result instanceof Error)
+      {
+        console.error(result);
+      }
+      else
+      {
+        setProdutoData(result);
+        
+          
+        
+        
+      }
 
-  
-
+      
+    });
+  }, []);
+  const produto = produtosData.find(produto => produto.id === Number(id));
   return (
     <div className="containerProduto">
       <div id="imagemProduto"><img src="" alt="imagem" /></div>
       <div id="detalhesProduto">
-        <h1>Produto {id}</h1>
+        <h1>Produt{produto?.nome}</h1>
         <h4>Varejista x</h4>
         <h2>R$ 0,00</h2>
         <section>
