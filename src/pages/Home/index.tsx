@@ -14,13 +14,11 @@ import { Environment } from "../../shared/environment";
 
 // substituir por requisição do banco de dados
 export const produtosData : produtoItem[] = [
-
-    
 ]
 
 
 function Home() {
-    
+
     const navigate = useNavigate()
     function handleCardLinkClick(){
         navigate('/login')
