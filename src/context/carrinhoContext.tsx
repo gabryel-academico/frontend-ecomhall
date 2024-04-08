@@ -15,6 +15,7 @@ export interface produtoItem {
     preco: number;
     // link: string;
     capa: string;
+    descricao: string;
   }
 
 interface CartProviderProps {

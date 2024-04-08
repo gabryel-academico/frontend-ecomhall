@@ -5,16 +5,25 @@ import { ProdutoService } from "../../../shared/Services/api/Produto/ProdutoServ
 import { jwtDecode } from "jwt-decode";
 import banner from "../../../assets/meuspedidos.jpg"
 
+interface user{
+unique_name: string;
+email: string;
+Id: string;
+}
+
 function PedidosC() {
   const navigate = useNavigate();
   const token = localStorage.getItem('ACESS_TOKEN');
- let decodedToken = null;
+  const [decodedToken, setDecodedToken] = useState<user | null>(null);
 
-  if (token) {
-    decodedToken = jwtDecode(token);
-    console.log(decodedToken?.aud);  
-  }
-
+  useEffect(() => {
+    const token = localStorage.getItem('ACESS_TOKEN');
+    if (token) {
+      const decoded = jwtDecode<user | null>(token);
+      setDecodedToken(decoded);
+      console.log(decoded)
+    }
+  }, []);
 
   return (
     <div className="containerPedidos">
@@ -24,10 +33,21 @@ function PedidosC() {
 
       <article>
         <section className= "conta">
-            <span>Nome: {decodedToken?.aud}</span>
-            <span>Cpf:</span>
-            <span>Email</span>
-            </section>
+        <h3>Conta</h3>
+        <hr />
+        {decodedToken ? (
+          <>
+            <span>Id: {decodedToken.Id}</span>
+
+            <span>Nome: {decodedToken.unique_name}</span>
+            
+            <span>Email: {decodedToken.email}</span>
+          </>
+        ) : (
+          <span>Token não decodificado</span>
+        )}
+        </section>
+          
 
       </article>
 
