@@ -47,8 +47,6 @@ function Home() {
         <>
         <div className='area'>
         <div className='banner'><img src={banner} alt="banner" /></div>
-        
-        <h1>Recomendações</h1>
 
           <div className="area">
 
