@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import "../style.css";
 import { useNavigate } from "react-router-dom";
 import { ProdutoService } from "../../../shared/Services/api/Produto/ProdutoService";
+import { jwtDecode } from "jwt-decode";
 import banner from "../../../assets/banner.jpg"
+
 function PedidosC() {
   const navigate = useNavigate();
-
-  
+  const token = localStorage.getItem('ACESS_TOKEN');
+ 
+  if (token) {
+    const decodedToken = jwtDecode(token);
+    console.log(decodedToken);  
+  }
   return (
     <div className="containerPedidos">
      
@@ -16,6 +22,8 @@ function PedidosC() {
       <article>
         <section className= "conta">
             <span>Nome:</span>
+            <span>Cpf:</span>
+            <span>Email</span>
             </section>
 
       </article>

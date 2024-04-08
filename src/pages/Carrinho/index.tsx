@@ -22,11 +22,12 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
+import { useNavigate } from "react-router-dom";
 
 
 
 function Carrinho(){
-  
+  const navigate = useNavigate()
   //dropdown
   const [age, setAge] = React.useState('');
   const handleChange = (event: SelectChangeEvent) => {
@@ -86,7 +87,7 @@ function Carrinho(){
   }
 
   function handleClickFinal(){
-      
+    navigate('/pedidos/cliente')
   }
 
     //contexxto
